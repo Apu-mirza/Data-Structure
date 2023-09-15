@@ -1,0 +1,35 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+    int n, i, t;
+    cout<<"enter the size of array: ";
+    cin>>n;
+    int array[n];
+    cout<<"enter the array to be sorted: ";
+    for(i=0; i<n; i++){
+        cin>>array[i];
+    }
+
+    for(int step = 0; step < n-1; step++){
+        int min = step;
+        for(i=step+1; i<n; i++){
+            if(array[i] < array[min]){
+                min = i;
+            }
+        }
+        int temp = array[step];
+        array[step] = array[min];
+        array[min] = temp;
+    }
+
+        for(i=0; i<n; i++){
+        cout<<array[i]<<" ";
+    }
+    cout<<endl;
+
+
+
+}
